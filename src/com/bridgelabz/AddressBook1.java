@@ -34,14 +34,27 @@ public class AddressBook1 {
 
     }
 
-
+    //UC2 editing contact details
+    public static void editContact(){
+        System.out.println("Enter first name: ");
+        String firstName = sc.nextLine();
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).get(First_name).equalsIgnoreCase(firstName)){
+                list.remove(i);
+                AddContactDetails();
+            }
+            else {
+                System.out.println("No data found in Address Book");
+            }
+        }
+    }
 
 
     public static void main(String[] args) {
         addressbook2 = new AddressBook1();
         System.out.println("Welcome to Address Book");
         AddContactDetails();
-
+        editContact();
 
 
     }
